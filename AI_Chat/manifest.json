@@ -1,7 +1,7 @@
 {
   "name": "AI Chat Hub",
   "short_name": "AI Chat Hub",
-  "start_url": "/mypage/AI_Chat/ai-chat-hub.html",
+  "start_url": "./",
   "display": "standalone",
   "display_override": ["tabbed"],
   "background_color": "#ffffff",
@@ -16,11 +16,12 @@
   "tab_strip": {
     "home_tab": {
       "scope_patterns": [
-        {"pathname": "/mypage/AI_Chat/ai-chat-hub.html"}
+        {"pathname": "./"},
+        {"pathname": "./ai-chat-hub.html"}
       ]
     },
     "new_tab_button": {
-      "url": "/mypage/AI_Chat/bridge_chatgpt.html"
+      "url": "bridge_chatgpt.html"
     }
   }
 }
