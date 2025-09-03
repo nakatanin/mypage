@@ -4,20 +4,12 @@
   <meta charset="UTF-8">
   <title>AI Hub</title>
   <link rel="manifest" href="manifest.json">
-  <script>
-    // 起動時に各サービスをタブで開く
-    window.addEventListener('DOMContentLoaded', () => {
-      const urls = [
-        "https://chatgpt.com/",
-        "https://gemini.google.com/",
-        "https://m365.cloud.microsoft/chat/"
-      ];
-      urls.forEach(url => window.open(url, "_blank"));
-    });
-  </script>
 </head>
 <body>
-  <h1>AI Hub</h1>
-  <p>Launching ChatGPT, Gemini, and Copilot in tabs...</p>
+  <h1>AI Hub Home</h1>
+  <p>Launch AI Services:</p>
+  <button onclick="window.open('bridge_chatgpt.html', '_blank')">ChatGPT</button>
+  <button onclick="window.open('bridge_gemini.html', '_blank')">Gemini</button>
+  <button onclick="window.open('bridge_copilot.html', '_blank')">Copilot</button>
 </body>
 </html>
