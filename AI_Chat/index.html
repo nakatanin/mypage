@@ -10,16 +10,16 @@
 <body>
   <h1>AI Hub Home</h1>
   <p>Launch AI Services:</p>
-  <button onclick="window.open('bridge_chatgpt.html', '_blank')">ChatGPT</button>
   <button onclick="window.open('bridge_gemini.html', '_blank')">Gemini</button>
+  <button onclick="window.open('bridge_chatgpt.html', '_blank')">ChatGPT</button>
   <button onclick="window.open('bridge_copilot.html', '_blank')">Copilot</button>
   <button id="launchAll">Launch All Services</button>
 
   <script>
     document.getElementById('launchAll').addEventListener('click', () => {
       const bridges = [
-        'bridge_chatgpt.html',
         'bridge_gemini.html',
+        'bridge_chatgpt.html',
         'bridge_copilot.html'
       ];
       bridges.forEach(url => window.open(url, '_blank'));
