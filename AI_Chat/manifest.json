@@ -16,11 +16,14 @@
   "tab_strip": {
     "home_tab": {
       "scope_patterns": [
+        {"pathname": "/"},
         {"pathname": "/ai-chat-hub.html"}
       ]
     },
     "new_tab_button": {
-      "url": "https://nakatanin.github.io/mypage/index.html",
+      {"url": "https://nakatanin.github.io/mypage/index.html"},
+      {"url": "https://m365.cloud.microsoft/chat/"},
+      {"url": "https://chatgpt.com/"},
     }
   }
 }
