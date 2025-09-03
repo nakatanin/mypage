@@ -1,7 +1,7 @@
 {
   "name": "AI Chat Hub",
   "short_name": "AI Chat Hub",
-  "start_url": "/index.html",
+  "start_url": "/mypage/AI_Chat/ai-chat-hub.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#4285f4",
@@ -16,7 +16,7 @@
     "title": "AI Services",
     "new_tab_button": false,
     "home_tab": {
-      "url": "/index.html"
+      "url": "/mypage/AI_Chat/ai-chat-hub.html"
     }
   }
 }
