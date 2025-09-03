@@ -1,0 +1,22 @@
+{
+  "name": "AI Hub",
+  "short_name": "AI Hub",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4285f4",
+  "icons": [
+    {
+      "src": "https://www.google.com/chrome/static/images/favicons/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ],
+  "tab_strip": {
+    "title": "AI Services",
+    "new_tab_button": false,
+    "home_tab": {
+      "url": "/index.html"
+    }
+  }
+}
