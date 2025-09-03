@@ -2,18 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Hub</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <h1>AI Hub Home</h1>
-  <p>Launch AI Services:</p>
-  <button onclick="window.open('bridge_gemini.html', '_blank')">Gemini</button>
-  <button onclick="window.open('bridge_chatgpt.html', '_blank')">ChatGPT</button>
-  <button onclick="window.open('bridge_copilot.html', '_blank')">Copilot</button>
-  <button id="launchAll">Launch All Services</button>
+
+  <div class="container">
+    <h1>AI Hub Home</h1>
+    <p>Launch AI Services:</p>
+    
+    <div class="button-grid">
+      <button onclick="window.open('bridge_gemini.html', '_blank')">Gemini</button>
+      <button onclick="window.open('bridge_chatgpt.html', '_blank')">ChatGPT</button>
+      <button onclick="window.open('bridge_copilot.html', '_blank')">Copilot</button>
+      <button id="launchAll">Launch All Services</button>
+    </div>
+  </div>
 
   <script>
     document.getElementById('launchAll').addEventListener('click', () => {
