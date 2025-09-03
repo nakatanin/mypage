@@ -17,11 +17,11 @@
     "home_tab": {
       "scope_patterns": [
         {"pathname": "/"},
-        {"pathname": "/ai-chat-hub.html"}
+        {"pathname": "https://nakatanin.github.io/mypage/AI_Chat/ai-chat-hub.html"}
       ]
     },
     "new_tab_button": {
-      {"url": "/ai-chat-hub.html"},
+      {"url": "https://nakatanin.github.io/mypage/AI_Chat/ai-chat-hub.html"},
     }
   }
 }
