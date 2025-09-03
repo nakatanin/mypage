@@ -3,6 +3,7 @@
   "short_name": "AI Chat Hub",
   "start_url": "https://nakatanin.github.io/mypage/AI_Chat/ai-chat-hub.html",
   "display": "standalone",
+  "display_override": ["tabbed"],
   "background_color": "#ffffff",
   "theme_color": "#4285f4",
   "icons": [
