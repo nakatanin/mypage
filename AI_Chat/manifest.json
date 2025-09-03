@@ -1,9 +1,8 @@
 {
   "name": "AI Chat Hub",
   "short_name": "AI Chat Hub",
-  "start_url": "/ai-chat-hub.html",
+  "start_url": "https://nakatanin.github.io/mypage/AI_Chat/ai-chat-hub.html",
   "display": "standalone",
-  "scope": "/mypage/AI_Chat"
   "background_color": "#ffffff",
   "theme_color": "#4285f4",
   "icons": [
@@ -17,7 +16,7 @@
     "title": "AI Services",
     "new_tab_button": false,
     "home_tab": {
-      "url": "/ai-chat-hub.html"
+      "url": "https://nakatanin.github.io/mypage/AI_Chat/ai-chat-hub.html"
     }
   }
 }
