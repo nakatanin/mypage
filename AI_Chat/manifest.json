@@ -4,7 +4,7 @@
   "start_url": "./",
   "display": "standalone",
   "display_override": ["tabbed"],
-  "theme_color": "#123456",
+  "theme_color": "#3d3d3d",
   "icons": [
     {
       "src": "https://www.google.com/chrome/static/images/favicons/favicon-96x96.png",
