@@ -1,6 +1,6 @@
 {
-  "name": "AI Hub",
-  "short_name": "AI Hub",
+  "name": "AI Chat Hub",
+  "short_name": "AI Chat Hub",
   "start_url": "/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
