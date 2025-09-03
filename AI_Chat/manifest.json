@@ -16,7 +16,7 @@
   "tab_strip": {
     "home_tab": {
       "scope_patterns": [
-        {"pathname": "/index.html"}
+        {"pathname": "/ai-chat-hub.html"}
       ]
     },
     "new_tab_button": {
