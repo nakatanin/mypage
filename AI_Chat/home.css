@@ -1,11 +1,97 @@
-body {
-  background: #f8f9fa;
-  color: #212529;
+/* --- CSS変数（カラーテーマ）の定義 --- */
+:root {
+  --bg-color: #f8f9fa;      /* ライトモードの背景色 */
+  --text-color: #212529;    /* ライトモードの文字色 */
+  --card-bg: #ffffff;       /* カードの背景色 */
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --button-bg: #e9ecef;      /* 通常ボタンの背景色 */
+  --button-hover-bg: #dee2e6;
+  --primary-button-bg: #007bff; /* 強調ボタンの背景色 */
+  --primary-button-text: #ffffff;
+  --primary-button-hover-bg: #0056b3;
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background: #212529;
-    color: #f8f9fa;
+  :root {
+    --bg-color: #212529;      /* ダークモードの背景色 */
+    --text-color: #f8f9fa;    /* ダークモードの文字色 */
+    --card-bg: #343a40;       /* カードの背景色 */
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --button-bg: #495057;      /* 通常ボタンの背景色 */
+    --button-hover-bg: #6c757d;
   }
+}
+
+/* --- 全体のレイアウト --- */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* --- コンテンツをまとめるカード --- */
+.container {
+  background: var(--card-bg);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--card-shadow);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+p {
+  margin-bottom: 25px;
+  opacity: 0.8;
+}
+
+/* --- ボタンのグループ --- */
+.button-grid {
+  display: grid;
+  gap: 15px; /* ボタン間の余白 */
+}
+
+/* --- ボタン共通スタイル --- */
+button {
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  width: 100%;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+}
+
+button:active {
+  transform: scale(0.98); /* クリック時に少し縮むエフェクト */
+}
+
+/* --- "Launch All" ボタンの特別スタイル --- */
+#launchAll {
+  background-color: var(--primary-button-bg);
+  color: var(--primary-button-text);
+}
+
+#launchAll:hover {
+  background-color: var(--primary-button-hover-bg);
 }
