@@ -14,10 +14,13 @@
     }
   ],
   "tab_strip": {
-    "title": "AI Services",
-    "new_tab_button": false,
     "home_tab": {
-      "url": "https://nakatanin.github.io/mypage/AI_Chat/ai-chat-hub.html"
+      "scope_patterns": [
+        {"pathname": "/ai-chat-hub.html"}
+      ]
+    },
+    "new_tab_button": {
+      "url": "https://nakatanin.github.io/mypage/index.html",
     }
   }
 }
