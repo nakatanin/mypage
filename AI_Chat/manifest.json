@@ -1,6 +1,6 @@
 {
-  "name": "AI Chat Hub",
-  "short_name": "AI Chat Hub",
+  "name": "AI Chat Portal",
+  "short_name": "AI Chat Portal",
   "start_url": "./",
   "display": "standalone",
   "display_override": ["tabbed"],
@@ -16,7 +16,7 @@
     "home_tab": {
       "scope_patterns": [
         {"pathname": "./"},
-        {"pathname": "./ai-chat-hub.html"}
+        {"pathname": "./ai-chat-portal.html"}
       ]
     },
     "new_tab_button": {
