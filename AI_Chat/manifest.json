@@ -16,11 +16,11 @@
     "home_tab": {
       "scope_patterns": [
         {"pathname": "./"},
-        {"pathname": "./ai-chat-portal.html"}
+        {"pathname": "./index.html"}
       ]
     },
     "new_tab_button": {
-      "url": "bridge_chatgpt.html"
+      "url": "bridge_gemini.html"
     }
   }
 }
