@@ -95,3 +95,18 @@ button:active {
 #launchAll:hover {
   background-color: var(--primary-button-hover-bg);
 }
+
+/* --- Link to Manual --- */
+.manual-link {
+  display: block;
+  margin-top: 30px; /* ボタンとの余白を調整 */
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.manual-link:hover {
+  color: var(--brand);
+  text-decoration: underline;
+}
