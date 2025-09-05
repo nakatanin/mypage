@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Chat Portal マニュアル</title>
+  <style>
+  
+    :root{
+      --bg:#ffffff; --ink:#111827; --muted:#6b7280; --brand:#2563eb; --ok:#16a34a; --warn:#b45309; --border:#e5e7eb;
+    }
+    html,body{background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif; line-height:1.65;}
+    .wrap{max-width: 880px; margin: 24px auto 72px; padding: 0 16px;}
+    h1{font-size: clamp(24px, 4vw, 36px); line-height:1.2; margin: 16px 0 8px;}
+    h2{font-size: clamp(20px, 3.2vw, 26px); margin: 28px 0 8px;}
+    h3{font-size: clamp(18px, 2.8vw, 22px); margin: 20px 0 8px;}
+    p{margin: 8px 0;}
+    .lead{font-size: 1.05rem; color: var(--muted); margin-bottom: 8px}
+    .note{background:#f8fafc; border:1px solid var(--border); border-left: 4px solid var(--brand); padding:12px 16px; border-radius:12px;}
+    .warn{border-left-color: var(--warn);}
+    .ok{border-left-color: var(--ok);}
+    .grid{display:grid; gap:16px;}
+    .step{border:1px solid var(--border); border-radius:16px; padding:16px; box-shadow: 0 1px 0 rgb(0 0 0 / 0.03);} 
+    .step > header{display:flex; align-items:center; gap:12px; margin-bottom:8px}
+    .badge{display:inline-grid; place-items:center; width:28px; height:28px; border-radius:50%; background:var(--brand); color:#fff; font-weight:700;}
+    .kbd{display:inline-block; border: 1px solid var(--border); border-bottom-width:3px; border-radius:8px; padding:2px 6px; font-weight:600; background:#fff;}
+    .illus{background:#fff; border:1px solid var(--border); border-radius:14px; overflow:hidden;}
+    /* ▼ 編集点：imgタグ用のスタイルを追加 ▼ */
+    .illus svg, .illus img{width:100%; height:auto; display:block;}
+    .small{font-size: .93rem; color: var(--muted)}
+    .toc{border:1px dashed var(--border); border-radius:12px; padding:12px 16px;}
+    a{color:var(--brand);}
+    ul{padding-left: 1.2em}
+    code{background:#f8fafc; padding:2px 6px; border:1px solid var(--border); border-radius:8px}
+    hr{border:none; border-top:1px solid var(--border); margin: 28px 0}
+    .footer{margin-top:40px; font-size:.9rem; color:var(--muted)}
+    @media print{
+      body{background:#fff}
+      .wrap{max-width: 100%; margin:0; padding:0}
+      a[href]::after{content:" (" attr(href) ")"; font-size: .9em; color:#374151}
+      .step{break-inside: avoid}
+      .toc{page-break-inside: avoid}
+      .footer{page-break-inside: avoid}
+    }
+  
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#111827; --ink:#f9fafb; --muted:#d1d5db; --brand:#3b82f6;
+      --ok:#22c55e; --warn:#f59e0b; --border:#374151;
+    }
+    body { background: var(--bg); color: var(--ink); }
+    .step, .note, .illus, .toc { background-color:#1f2937; border-color:var(--border); }
+    code, .kbd { background:#1e293b; border-color:var(--border); color:var(--ink); }
+    a { color:#60a5fa; }
+  }
+
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>AI Chat Portal マニュアル</h1>
+    <p class="lead">AI Chat Portalをご利用いただきありがとうございます。<br>
+      このマニュアルは、本ポータルの便利な機能と、その能力を最大限に引き出すための設定手順を解説するものです。
+    </p>
+
+    <div class="toc">
+      <h3>目次</h3>
+      <ol>
+        <li><a href="#about">AI Chat Portalについて</a>
+          <ul>
+            <li><a href="#features">主な機能と利用メリット</a></li>
+          </ul>
+        </li>
+        <li><a href="#setup">利用準備：PWAのインストールと設定</a>
+          <ul>
+            <li><a href="#terms">用語の解説（PWAとタブモード）</a></li>
+            <li><a href="#install-pwa">PWAをインストールする手順</a></li>
+            <li><a href="#demo">デモアプリでの動作確認</a></li>
+          </ul>
+        </li>
+        <li><a href="#misc">その他</a>
+          <ul>
+            <li><a href="#uninstall">アンインストール方法</a></li>
+            <li><a href="#faq">トラブル対処 Q&A</a></li>
+          </ul>
+        </li>
+      </ol>
+    </div>
+
+    <hr/>
+
+    <section id="about">
+      <h2>AI Chat Portalについて</h2>
+      <p>AI Chat Portalは、複数の主要なAIチャットサービスを一つのウィンドウに集約し、タブで素早く切り替えて利用できるアプリケーションです。ブラウザのタブをいくつも開くことなく、思考を中断せずに様々なAIアシスタントを効率的に活用できます。</p>
+      
+      <h3 id="features">主な機能と利用メリット</h3>
+      <ul>
+        <li><strong>複数AIへの簡単アクセス</strong><br>
+          Gemini, ChatGPT, Copilotといった主要なAIサービスをワンクリックで開けます。
+        </li>
+        <li><strong>タブによる効率的な作業</strong><br>
+          各AIサービスがアプリ内のタブとして開くため、ウィンドウを切り替える手間なく、プロンプトの比較検討や複数作業の並行処理がスムーズに行えます。
+        </li>
+        <li><strong>PWAによるアプリのような操作感</strong><br>
+          デスクトップにインストールすることで、通常のアプリケーションのように素早く起動し、独立したウィンドウで作業に集中できます。
+        </li>
+      </ul>
+      <div class="note">
+        <p>本ポータルは、Chromeの「Tabbed Application Mode」という技術を利用しています。この機能を最大限活用するために、次章のインストール手順をお読みください。</p>
+      </div>
+    </section>
+
+    <hr/>
+
+    <section id="setup">
+    <h2>利用準備：PWAのインストールと設定</h2>
+    <p class="lead">本ポータルをアプリのように使い、ウィンドウ内でタブ機能を利用するための設定手順を解説します。PC操作が苦手な方にも分かりやすいよう、図解で手順をまとめています。</p>
+    
+    <div class="note ok small">
+      <p><strong>重要なポイント（最初にお読みください）</strong><br>
+        ウィンドウ内でのタブ表示（Tabbed Application Mode）は、現時点（2025-09-05）で<strong>ChromeOSでは標準対応</strong>、<strong>Windows / macOS / Linuxでは本ポータルようにアプリ側（PWA）が対応している場合にのみ有効</strong>となります。</p>
+    </div>
+
+    <h3 id="terms">用語の解説（PWAとタブモード）</h3>
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+      <div class="step">
+        <header><h4>PWA（インストール型Webアプリ）とは？</h4></header>
+        <p>WebサイトをPCに「アプリ」としてインストールできる仕組みです。デスクトップ等にアイコンが追加され、独立したウィンドウで起動します。</p>
+      </div>
+      <div class="step">
+        <header><h4>Tabbed Application Mode とは？</h4></header>
+        <p>インストールしたPWA内で、ブラウザのように複数のタブを開ける機能です。本ポータルはこの機能に対応しています。</p>
+      </div>
+    </div>
+    
+    <div class="illus">
+      <img src="screenshot1.png" alt="PWA window sample">
+    </div>
+
+    <h3 id="install-pwa">PWAをインストールする手順</h3>
+    <div class="step">
+      <header><span class="badge">1</span><h4>ポータルをChromeで開く</h4></header>
+      <p><a href="https://nakatanin.github.io/mypage/AI_Chat/">AI Chat PortalのWebページ</a>をGoogle Chromeで開きます。</p>
+    </div>
+    <div class="step">
+      <header><span class="badge">2</span><h4>インストールを実行する</h4></header>
+      <p>Chrome右上の <span class="kbd">︙</span> メニューをクリックし、<strong>「（アプリ名）をインストール」</strong> を選択します。</p>
+      <div class="illus">
+        <img src="screenshot2.png" alt="Install PAW for Chrome">
+      </div>
+    </div>
+    <div class="step">
+      <header><span class="badge">3</span><h4>アプリを起動し、タブを確認する</h4></header>
+      <p>インストール後、デスクトップのショートカットなどからアプリを起動します。ウィンドウ上部にタブバーが表示され、ポータル内のリンクから新しいタブが開けば設定完了です。</p>
+    </div>
+
+    <h3 id="demo">デモアプリでの動作確認</h3>
+    <div class="step">
+      <header><span class="badge">1</span><h4>【参考】Chrome公式デモで確認</h4></header>
+      <p>ご自身の環境でTabbed Application Modeがどのように動作するかは、Chromeチームが公開している公式デモページでも確認できます。</p>
+      <ul>
+        <li>デモ：<a href="https://googlechrome.github.io/samples/tabbed-application-mode/">Tabbed Application Mode Demo</a>（Chrome公式）</li>
+      </ul>
+      <p class="small">上記ページをChromeで開き、同様に「インストール」してアプリを起動すると、タブが表示されるかを確認できます。</p>
+    </div>
+    </section>
+
+    <hr/>
+
+    <section id="misc">
+    <h2>その他</h2>
+    <h3 id="uninstall">アンインストール方法</h3>
+    <div class="step">
+      <p>アプリウィンドウの右上メニュー <span class="kbd">︙</span> → <strong>「（アプリ名）をアンインストール」</strong> を選択します。または、Chromeのアプリアイコン一覧ページ（アドレスバーに <code>chrome://apps</code> と入力）から対象アプリを右クリックして削除します。</p>
+    </div>
+
+    <h3 id="faq">トラブル対処 Q&A</h3>
+    <div class="step">
+      <header><span class="badge">Q1</span><h4>インストールしたアプリにタブが出ません</h4></header>
+      <p>お使いのChromeが最新版であるかご確認ください。それでも表示されない場合は、上記<a href="#demo">公式デモ</a>でタブが表示されるかをお試しください。デモでも表示されない場合、OSやChromeのバージョン、または組織のポリシー等が影響している可能性があります。</p>
+    </div>
+    <div class="step">
+      <header><span class="badge">Q2</span><h4>「chrome://flags」で設定は不要ですか？</h4></header>
+      <p>はい。以前はユーザーが手動で有効化する必要がありましたが、現在は仕様が変更され、<strong>PWA側が対応していれば自動でタブが有効</strong>になります。ユーザー側での `chrome://flags` の設定は不要です。</p>
+    </div>
+    </section>
+
+    <hr/>
+    <p class="small">発行日：2025-09-05（JST）／ 作成：AI Assistant（ドキュメント統合・編集）</p>
+    <div class="footer small">
+      <p>注意：文中の画像（スクリーンショット）は<strong>本ページ発行日時点のもの</strong>です。実際の画面と細部が異なる場合があります。</p>
+    </div>
+  </div>
+</body>
+</html>
